@@ -1,12 +1,279 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentación de la API</title>
+  <title>Pacific Network - Documentacion</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1>Bienvenido a la Documentación de la API</h1>
-  <p>Pronto encontrarás más información aquí.</p>
+
+<body class="light-theme">
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <div class="nav-brand">
+        <img class="logo" src="img/FullColor_TransparentBg_1280x1024_72dpi.png" alt="">
+        <span class="brand-text">Pacific Network</span>
+      </div>
+      <div class="nav-links">
+        <a href="#docs" class="nav-link">Documentación</a>
+        <a href="#versions" class="nav-link">Versiones</a>
+        <a href="#terms" class="nav-link">Términos</a>
+        <button id="theme-toggle" class="theme-toggle">
+          <svg id="sun-icon" class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg id="moon-icon" class="icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">
+        <span class="title-primary">API de </span>
+        <span class="title-accent">Envio SMS</span>
+      </h1>
+      <p class="hero-subtitle">
+        Envia mensajes sms de forma rapida y segura
+      </p>
+      <div class="hero-buttons">
+        <button class="btn-primary">Comenzar Ahora</button>
+        <button class="btn-secondary">Ver Documentación</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">+10</div>
+          <div class="stat-label">Clientes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">
+            < 500ms</div>
+              <div class="stat-label">Tiempo de Envio</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">24/7</div>
+            <div class="stat-label">Soporte Técnico</div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="main-section">
+    <div class="container">
+      <!-- Tabs -->
+      <div class="tabs-container">
+        <button class="tab-btn active" data-tab="docs">
+          📚 Documentación
+        </button>
+        <button class="tab-btn" data-tab="versions">
+          📝 Notas de Versión
+        </button>
+        <button class="tab-btn" data-tab="terms">
+          📋 Términos y Condiciones
+        </button>
+      </div>
+
+      <!-- Documentation Tab -->
+      <div id="docs-content" class="tab-content active">
+        <!-- Authentication Section -->
+        <div class="card">
+          <h2 class="section-title">🔐 Autenticación</h2>
+          <p class="section-text">Todas las peticiones requieren una API Key en el header de autorización:</p>
+          <div class="code-block">Authorization: Bearer YOUR_API_KEY</div>
+          <p class="section-note">Obtén tu API Key en el panel de desarrolladores de Pacific Network.</p>
+        </div>
+
+        <!-- Search -->
+        <div class="search-container">
+          <input type="text" id="search-input" class="search-input" placeholder="🔍 Buscar endpoints...">
+        </div>
+
+        <!-- Endpoints -->
+        <iframe src="https://documenter.getpostman.com/view/29143966/2sB3QCRYaH" allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- Versions Tab -->
+      <div id="versions-content" class="tab-content">
+        <div class="card version-card">
+          <div class="version-header">
+            <span class="version-badge version-current">v1.1.0</span>
+            <span class="version-date">30 de Septiembre, 2025</span>
+          </div>
+          <h3 class="version-section-title">🚀 Nuevas Características</h3>
+          <ul class="version-list">
+            <li>Soporte para reembolsos parciales</li>
+            <li>Endpoint de consulta de estado mejorado</li>
+            <li>Webhooks para notificaciones en tiempo real</li>
+          </ul>
+          <h3 class="version-section-title">🔧 Mejoras</h3>
+          <ul class="version-list">
+            <li>Reducción del tiempo de respuesta en un 30%</li>
+            <li>Mejor manejo de errores con códigos más descriptivos</li>
+          </ul>
+          <h3 class="version-section-title">🐛 Correcciones</h3>
+          <ul class="version-list">
+            <li>Corregido problema con caracteres especiales en buyOrder</li>
+            <li>Solucionado timeout intermitente en confirmación</li>
+          </ul>
+        </div>
+
+        <div class="card version-card">
+          <div class="version-header">
+            <span class="version-badge version-old">v1.0.0</span>
+            <span class="version-date">15 de Enero, 2025</span>
+          </div>
+          <h3 class="version-section-title">🎉 Lanzamiento Inicial</h3>
+          <ul class="version-list">
+            <li>Integración completa con Transbank Webpay Plus</li>
+            <li>Endpoints de creación y confirmación de transacciones</li>
+            <li>Sistema de autenticación con API Keys</li>
+            <li>Documentación completa en Postman</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Terms Tab -->
+      <div id="terms-content" class="tab-content">
+        <div class="card terms-card">
+          <h2 class="terms-title">Términos y Condiciones de Uso</h2>
+
+          <div class="terms-content">
+            <section class="terms-section">
+              <h3 class="terms-subtitle">1. Aceptación de Términos</h3>
+              <p>Al acceder y utilizar la API de Pacific Network, usted acepta estar sujeto a estos términos y
+                condiciones de uso. Si no está de acuerdo con alguno de estos términos, no debe utilizar nuestra API.
+              </p>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">2. Uso de la API</h3>
+              <p>El uso de nuestra API está sujeto a las siguientes condiciones:</p>
+              <ul class="terms-list">
+                <li>Debe mantener la confidencialidad de sus credenciales de API</li>
+                <li>No debe exceder los límites de tasa establecidos (1000 peticiones/hora)</li>
+                <li>Debe usar la API solo para propósitos legales y autorizados</li>
+                <li>No debe intentar eludir las medidas de seguridad</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">3. Seguridad y Privacidad</h3>
+              <p>Pacific Network se compromete a:</p>
+              <ul class="terms-list">
+                <li>Proteger la información de las transacciones con encriptación SSL/TLS</li>
+                <li>No almacenar información sensible de tarjetas de crédito</li>
+                <li>Cumplir con las normativas PCI-DSS</li>
+                <li>Notificar cualquier brecha de seguridad en un plazo de 72 horas</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">4. Limitación de Responsabilidad</h3>
+              <p>Pacific Network no será responsable por daños indirectos, incidentales, especiales o consecuentes que
+                resulten del uso o la imposibilidad de uso de la API, incluyendo pero no limitado a:</p>
+              <ul class="terms-list">
+                <li>Pérdida de ganancias o ingresos</li>
+                <li>Pérdida de datos</li>
+                <li>Interrupción del negocio</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">5. Disponibilidad del Servicio</h3>
+              <p>Garantizamos un uptime del 99.9% mensual. En caso de mantenimiento programado, notificaremos con al
+                menos 48 horas de anticipación. Los tiempos de inactividad planificados no se contabilizan en el SLA.
+              </p>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">6. Modificaciones del Servicio</h3>
+              <p>Pacific Network se reserva el derecho de modificar o discontinuar la API en cualquier momento, con
+                previo aviso de 30 días para cambios significativos que afecten la compatibilidad.</p>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">7. Soporte Técnico</h3>
+              <p>Ofrecemos soporte técnico 24/7 a través de:</p>
+              <ul class="terms-list">
+                <li>Email: support@pacificnetwork.cl</li>
+                <li>Chat en línea disponible en nuestro portal</li>
+                <li>Teléfono: +56 2 1234 5678 (horario extendido)</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">8. Ley Aplicable</h3>
+              <p>Estos términos se regirán e interpretarán de acuerdo con las leyes de Chile. Cualquier disputa será
+                resuelta en los tribunales de Santiago.</p>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">9. Contacto</h3>
+              <p>Para preguntas sobre estos términos, contáctenos en:</p>
+              <p class="contact-info">
+                <strong>Pacific Network</strong><br>
+                Email: legal@pacificnetwork.cl<br>
+                Dirección: Av. Providencia 123, Santiago, Chile
+              </p>
+            </section>
+
+            <p class="terms-footer">
+              <em>Última actualización: 30 de Septiembre, 2025</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4 class="footer-title">Pacific Network</h4>
+          <p class="footer-text">Soluciones de pago seguras y confiables para tu negocio.</p>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">Enlaces Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#docs">Documentación</a></li>
+            <li><a href="#versions">Notas de Versión</a></li>
+            <li><a href="#terms">Términos y Condiciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">Contacto</h4>
+          <ul class="footer-contact">
+            <li>📧 support@pacificnetwork.cl</li>
+            <li>📞 +56 2 1234 5678</li>
+            <li>📍 Santiago, Chile</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pacific Network. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
