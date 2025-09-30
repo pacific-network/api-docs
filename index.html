@@ -8,31 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: "Share Tech Mono", monospace;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Share Tech Mono", monospace;
-    }
-
-    /* Para el código dentro de la documentación */
-    code,
-    pre {
-      font-family: "Share Tech Mono", monospace;
-    }
-  </style>
 
 
 </head>
@@ -128,20 +104,54 @@
       <div id="docs-content" class="tab-content active">
         <!-- Authentication Section -->
         <div class="card">
-          <h2 class="section-title">🔐 Autenticación</h2>
-          <p class="section-text">Todas las peticiones requieren una API Key en el header de autorización:</p>
-          <div class="code-block">Authorization: Bearer YOUR_API_KEY</div>
-          <p class="section-note">Obtén tu API Key en el panel de desarrolladores de Pacific Network.</p>
+          <h2 class="section-title">🔑 Autenticación</h2>
+          <p class="section-text">
+            Todas las peticiones requieren una API Key en el header de autorización:
+          </p>
+
+          <div class="code-block">
+            <code>Authorization: <span class="api-key">api-key-cliente</span></code>
+          </div>
+
+          <div class="auth-info">
+            <div><strong>Auth Type:</strong> API Key</div>
+            <div><strong>Key:</strong> x-api-key</div>
+            <div><strong>Value:</strong> api-key-cliente</div>
+            <div><strong>Add To:</strong> Header</div>
+          </div>
+
+          <p class="section-note">
+            <strong>Para obtener tu API-KEY contactate con <span>soporte@pacificnetwork.cl</span><strong>
+          </p>
         </div>
 
-        <!-- Search -->
-        <div class="search-container">
-          <input type="text" id="search-input" class="search-input" placeholder="🔍 Buscar endpoints...">
-        </div>
+
 
         <!-- Endpoints -->
-        <iframe src="https://documenter.getpostman.com/view/29143966/2sB3QCRYaH" allowfullscreen>
-        </iframe>
+
+        <div class="card">
+          <h2 class="section-title"> 📡 Endpoints</h2>
+          <!-- Search -->
+          <div class="search-container">
+            <div class="search-box">
+              <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z" />
+              </svg>
+              <input type="text" id="search-input" class="search-input" placeholder="Buscar endpoints...">
+            </div>
+          </div>
+          <div class="category-tabs">
+            <button class="cat-tab active" data-cat="Cuenta">Cuenta</button>
+            <button class="cat-tab" data-cat="Campaña">Campaña</button>
+            <button class="cat-tab" data-cat="Mensaje Individual">Mensaje Individual</button>
+            <button class="cat-tab" data-cat="Reporte">Reporte</button>
+          </div>
+
+          <div id="endpoints-container"></div>
+        </div>
+
+
       </div>
 
       <!-- Versions Tab -->
@@ -310,6 +320,7 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="endpoint.js"></script>
 </body>
 
 </html>
