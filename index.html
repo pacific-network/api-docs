@@ -58,7 +58,10 @@
       </p>
       <div class="hero-buttons">
         <button class="btn-primary">Comenzar Ahora</button>
-        <button class="btn-secondary">Ver Documentación</button>
+        <a href="https://documenter.getpostman.com/view/29143966/2sB3QCRYaH#35befde5-c8e5-4356-910e-283648d6cbab"
+          target="_blank" rel="noopener noreferrer">
+          <button class="btn-secondary">Ver Documentación</button>
+        </a>
       </div>
     </div>
   </section>
@@ -73,7 +76,7 @@
         </div>
         <div class="stat-card">
           <div class="stat-value">
-            < 500ms</div>
+            < 500 ms</div>
               <div class="stat-label">Tiempo de Envio</div>
           </div>
           <div class="stat-card">
@@ -132,7 +135,7 @@
         <div class="card">
           <h2 class="section-title"> 📡 Endpoints</h2>
           <!-- Search -->
-          <div class="search-container">
+          <!-- <div class="search-container">
             <div class="search-box">
               <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -140,7 +143,7 @@
               </svg>
               <input type="text" id="search-input" class="search-input" placeholder="Buscar endpoints...">
             </div>
-          </div>
+          </div> -->
           <div class="category-tabs">
             <button class="cat-tab active" data-cat="Cuenta">Cuenta</button>
             <button class="cat-tab" data-cat="Campaña">Campaña</button>
@@ -163,9 +166,8 @@
           </div>
           <h3 class="version-section-title">🚀 Nuevas Características</h3>
           <ul class="version-list">
-            <li>Soporte para reembolsos parciales</li>
-            <li>Endpoint de consulta de estado mejorado</li>
-            <li>Webhooks para notificaciones en tiempo real</li>
+            <li>Detalle de estado de mensaje</li>
+            <li>Endpoint de consulta de estado mejorado y optimizado</li>
           </ul>
           <h3 class="version-section-title">🔧 Mejoras</h3>
           <ul class="version-list">
@@ -174,8 +176,8 @@
           </ul>
           <h3 class="version-section-title">🐛 Correcciones</h3>
           <ul class="version-list">
-            <li>Corregido problema con caracteres especiales en buyOrder</li>
-            <li>Solucionado timeout intermitente en confirmación</li>
+            <li>Corregido problema con caracteres especiales</li>
+            <li>Solucionado error en service_id como numero de origen</li>
           </ul>
         </div>
 
@@ -186,9 +188,9 @@
           </div>
           <h3 class="version-section-title">🎉 Lanzamiento Inicial</h3>
           <ul class="version-list">
-            <li>Integración completa con Transbank Webpay Plus</li>
-            <li>Endpoints de creación y confirmación de transacciones</li>
-            <li>Sistema de autenticación con API Keys</li>
+            <li>Seguridad mediante API-KEY</li>
+            <li>Endpoints de envio masivo e individual/li>
+            <li>Sistema con reportes funcionales y detallados</li>
             <li>Documentación completa en Postman</li>
           </ul>
         </div>
@@ -197,85 +199,140 @@
       <!-- Terms Tab -->
       <div id="terms-content" class="tab-content">
         <div class="card terms-card">
-          <h2 class="terms-title">Términos y Condiciones de Uso</h2>
+          <h2 class="terms-title">Términos y Condiciones del Servicio de Envío de SMS</h2>
+          <p class="terms-version"><em>Versión 1.0 – Septiembre 2025</em></p>
 
           <div class="terms-content">
             <section class="terms-section">
-              <h3 class="terms-subtitle">1. Aceptación de Términos</h3>
-              <p>Al acceder y utilizar la API de Pacific Network, usted acepta estar sujeto a estos términos y
-                condiciones de uso. Si no está de acuerdo con alguno de estos términos, no debe utilizar nuestra API.
+              <h3 class="terms-subtitle">1. Introducción</h3>
+              <p>
+                Estos Términos y Condiciones regulan el acceso y uso de la plataforma de envío de mensajes SMS (“el
+                Servicio”),
+                propiedad de Pacific Network, RUT 77.155.498-9, con domicilio en Avenida Del Valle Sur 662, Huechuraba,
+                Santiago, en adelante “la Empresa”.
+              </p>
+              <p>
+                Al registrarse, contratar o utilizar el Servicio, el Cliente declara haber leído, comprendido y aceptado
+                íntegramente
+                las disposiciones aquí contenidas.
               </p>
             </section>
 
             <section class="terms-section">
-              <h3 class="terms-subtitle">2. Uso de la API</h3>
-              <p>El uso de nuestra API está sujeto a las siguientes condiciones:</p>
+              <h3 class="terms-subtitle">2. Definiciones</h3>
               <ul class="terms-list">
-                <li>Debe mantener la confidencialidad de sus credenciales de API</li>
-                <li>No debe exceder los límites de tasa establecidos (1000 peticiones/hora)</li>
-                <li>Debe usar la API solo para propósitos legales y autorizados</li>
-                <li>No debe intentar eludir las medidas de seguridad</li>
+                <li><strong>Cliente / Usuario:</strong> Persona natural o jurídica que contrata el Servicio.</li>
+                <li><strong>Plataforma:</strong> Sistema web provisto por la Empresa para el envío, gestión y control de
+                  mensajes SMS.</li>
+                <li><strong>Servicio SMS:</strong> Envío de mensajes de texto a números móviles a través de la
+                  Plataforma.</li>
+                <li><strong>Campaña:</strong> Conjunto de mensajes SMS enviados por el Cliente bajo una misma
+                  planificación.</li>
+                <li><strong>Tarifa / Precio por SMS:</strong> Valor unitario cobrado por cada mensaje, determinado según
+                  el volumen mensual de envío.</li>
               </ul>
             </section>
 
             <section class="terms-section">
-              <h3 class="terms-subtitle">3. Seguridad y Privacidad</h3>
-              <p>Pacific Network se compromete a:</p>
-              <ul class="terms-list">
-                <li>Proteger la información de las transacciones con encriptación SSL/TLS</li>
-                <li>No almacenar información sensible de tarjetas de crédito</li>
-                <li>Cumplir con las normativas PCI-DSS</li>
-                <li>Notificar cualquier brecha de seguridad en un plazo de 72 horas</li>
-              </ul>
-            </section>
-
-            <section class="terms-section">
-              <h3 class="terms-subtitle">4. Limitación de Responsabilidad</h3>
-              <p>Pacific Network no será responsable por daños indirectos, incidentales, especiales o consecuentes que
-                resulten del uso o la imposibilidad de uso de la API, incluyendo pero no limitado a:</p>
-              <ul class="terms-list">
-                <li>Pérdida de ganancias o ingresos</li>
-                <li>Pérdida de datos</li>
-                <li>Interrupción del negocio</li>
-              </ul>
-            </section>
-
-            <section class="terms-section">
-              <h3 class="terms-subtitle">5. Disponibilidad del Servicio</h3>
-              <p>Garantizamos un uptime del 99.9% mensual. En caso de mantenimiento programado, notificaremos con al
-                menos 48 horas de anticipación. Los tiempos de inactividad planificados no se contabilizan en el SLA.
+              <h3 class="terms-subtitle">3. Objeto del Servicio</h3>
+              <p>
+                La Empresa provee al Cliente acceso a la Plataforma para el envío de mensajes SMS en distintos formatos
+                (números cortos, largos, OTP, campañas, etc.), de acuerdo con los planes / servicios disponibles.
+                El Servicio se presta en la medida de la disponibilidad técnica de los operadores de telecomunicaciones
+                y está sujeto a las limitaciones propias de redes externas.
               </p>
             </section>
 
             <section class="terms-section">
-              <h3 class="terms-subtitle">6. Modificaciones del Servicio</h3>
-              <p>Pacific Network se reserva el derecho de modificar o discontinuar la API en cualquier momento, con
-                previo aviso de 30 días para cambios significativos que afecten la compatibilidad.</p>
-            </section>
-
-            <section class="terms-section">
-              <h3 class="terms-subtitle">7. Soporte Técnico</h3>
-              <p>Ofrecemos soporte técnico 24/7 a través de:</p>
+              <h3 class="terms-subtitle">4. Registro y Obligaciones del Cliente</h3>
               <ul class="terms-list">
-                <li>Email: support@pacificnetwork.cl</li>
-                <li>Chat en línea disponible en nuestro portal</li>
-                <li>Teléfono: +56 2 1234 5678 (horario extendido)</li>
+                <li>El Cliente garantiza la veracidad de los datos entregados al momento de registrarse.</li>
+                <li>El Cliente es responsable exclusivo del contenido de los mensajes enviados.</li>
+                <li>Está prohibido el uso del Servicio para fines ilícitos, tales como spam, fraude, acoso, mensajes sin
+                  consentimiento o cualquier actividad que vulnere la normativa vigente.</li>
+                <li>El Cliente debe asegurarse de que los destinatarios de sus mensajes hayan otorgado consentimiento
+                  expreso para recibirlos, conforme a la Ley N°19.496 y la Ley N°19.628 de Chile.</li>
               </ul>
             </section>
 
             <section class="terms-section">
-              <h3 class="terms-subtitle">8. Ley Aplicable</h3>
-              <p>Estos términos se regirán e interpretarán de acuerdo con las leyes de Chile. Cualquier disputa será
-                resuelta en los tribunales de Santiago.</p>
+              <h3 class="terms-subtitle">5. Tarifas y Facturación</h3>
+              <ul class="terms-list">
+                <li>El precio del SMS dependerá del volumen mensual enviado, conforme a la tabla de tramos vigente
+                  publicada en el sitio web de la Empresa.</li>
+                <li>La facturación se realizará de manera [mensual/prepago/postpago] según lo acordado en la
+                  contratación.</li>
+                <li>Todas las tarifas están expresadas en pesos chilenos e incluyen/excluyen IVA según corresponda.</li>
+                <li>La Empresa se reserva el derecho de modificar las tarifas, informando al Cliente con al menos 30
+                  días de anticipación.</li>
+              </ul>
             </section>
 
             <section class="terms-section">
-              <h3 class="terms-subtitle">9. Contacto</h3>
-              <p>Para preguntas sobre estos términos, contáctenos en:</p>
-              <p class="contact-info">
-                <strong>Pacific Network</strong><br>
-                Email: legal@pacificnetwork.cl<br>
-                Dirección: Av. Providencia 123, Santiago, Chile
+              <h3 class="terms-subtitle">6. Responsabilidades de la Empresa</h3>
+              <p>La Empresa se compromete a:</p>
+              <ul class="terms-list">
+                <li>Mantener la Plataforma operativa en la medida de lo razonablemente posible.</li>
+                <li>Implementar medidas de seguridad para resguardar la información del Cliente.</li>
+                <li>Entregar soporte técnico en los canales habilitados.</li>
+              </ul>
+              <p>No será responsable de fallos atribuibles a:</p>
+              <ul class="terms-list">
+                <li>Interrupciones en redes de terceros (operadores móviles).</li>
+                <li>Casos fortuitos o de fuerza mayor.</li>
+                <li>Uso indebido del Servicio por parte del Cliente.</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">7. Limitación de Responsabilidad</h3>
+              <ul class="terms-list">
+                <li>La Empresa no garantiza la entrega del 100% de los SMS enviados, ya que depende de factores
+                  externos.</li>
+                <li>No se hace responsable del contenido de los mensajes ni de las consecuencias legales derivadas de
+                  los mismos.</li>
+                <li>El Cliente mantendrá indemne a la Empresa frente a cualquier reclamo de terceros derivado del uso
+                  del Servicio.</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">8. Privacidad y Protección de Datos</h3>
+              <ul class="terms-list">
+                <li>La Empresa cumple con la Ley N°19.628 sobre Protección de la Vida Privada.</li>
+                <li>Los datos del Cliente serán utilizados únicamente para la correcta prestación del Servicio.</li>
+                <li>El Cliente es responsable de obtener y mantener los consentimientos válidos de sus destinatarios.
+                </li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">9. Vigencia, Suspensión y Terminación</h3>
+              <ul class="terms-list">
+                <li>El contrato entra en vigor desde la aceptación por parte del Cliente y se mantendrá vigente mientras
+                  el Servicio esté activo.</li>
+                <li>La Empresa podrá suspender temporal o definitivamente el acceso al Servicio en caso de
+                  incumplimiento de estos Términos y Condiciones.</li>
+                <li>El Cliente podrá solicitar la terminación del Servicio en cualquier momento, previa liquidación de
+                  los montos adeudados.</li>
+              </ul>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">10. Modificaciones</h3>
+              <p>
+                La Empresa podrá modificar estos Términos y Condiciones en cualquier momento.
+                Los cambios serán comunicados al Cliente con al menos 30 días de anticipación y entrarán en vigor a
+                partir de su publicación en la Plataforma.
+              </p>
+            </section>
+
+            <section class="terms-section">
+              <h3 class="terms-subtitle">11. Legislación Aplicable y Jurisdicción</h3>
+              <p>
+                Estos Términos y Condiciones se rigen por la legislación chilena.
+                Cualquier controversia será sometida a los tribunales ordinarios de justicia de la ciudad de Santiago de
+                Chile.
               </p>
             </section>
 
@@ -285,6 +342,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -321,6 +379,7 @@
 
   <script src="script.js"></script>
   <script src="endpoint.js"></script>
+  <script src="nav.js"></script>
 </body>
 
 </html>

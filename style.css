@@ -11,6 +11,7 @@
   --radius: 12px;
   --shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
   --transition: 0.3s ease-in-out;
+  --color-card: #d3dbd9;
 }
 
 
@@ -295,7 +296,7 @@
      Cards / Endpoints
   --------------------------------*/
   .card {
-    background: #fff;
+    background: var(--color-card);
     border-radius: var(--radius);
     padding: 2rem;
     margin-bottom: 2rem;
@@ -305,7 +306,7 @@
   
   .section-title {
     margin-bottom: 1rem;
-    color: var(--color-primary);
+    color: #00000;
   }
   
   .subsection-title {
@@ -367,13 +368,13 @@
   }
   
   .version-old {
-    background: var(--color-secondary);
-    color: #fff;
+    background: var(--color-bg-alt);
+    color: #000;
   }
   
   .version-date {
     margin-left: 1rem;
-    color: var(--color-muted);
+    color: var(--color-surface);
     font-size: 0.9rem;
   }
   
@@ -381,26 +382,26 @@
      Terms
   --------------------------------*/
   .terms-title {
-    color: var(--color-primary);
+    color: var(--color-surface);
     margin-bottom: 1rem;
   }
   
   .terms-subtitle {
-    color: var(--color-secondary);
+    color: var(--color-surface);
     margin-top: 1rem;
   }
   
   .terms-footer {
     margin-top: 2rem;
     font-size: 0.9rem;
-    color: var(--color-muted);
+    color: var(--color-secondary);
   }
   
   /* ------------------------------
      Footer
   --------------------------------*/
   .footer {
-    background: var(--color-primary);
+    background: var(--color-surface);
     color: #fff;
     padding: 3rem 2rem 1rem;
   }
@@ -496,7 +497,7 @@
   }
   
   .search-input::placeholder {
-    color: var(--color-muted);
+    color: var(--color-surface);
   }
   
   .search-input:focus {
@@ -506,44 +507,78 @@
   }
   
   /* Endpoints  */
-  .endpoint-card {
-    background: var(--color-surface);
-    border-radius: var(--radius);
-    margin-bottom: 1rem;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-  }
+
+ /* Contenedor principal de todos los endpoints */
+#endpoints-container {
+  max-height: 80vh;      /* ocupa como máximo 80% de la pantalla */
+  overflow-y: auto;      /* scroll vertical si hay mucho contenido */
+  padding-right: 0.5rem; /* evita que el scroll tape contenido */
+}
+
+/* Cada card de endpoint */
+.endpoint-card {
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+/* Header con collapse */
+/* Header colapsado */
+/* Header normal (cerrado) */
+.endpoint-header {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #000000; /* texto inicial */
+  padding: 0.5rem 1rem;
+  border-radius: 6px 6px 0 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header expandido (abierto) */
+.endpoint-header.expanded {
+  background-color: var(--color-primary); /* color cuando está abierto */
+  color: #000; /* texto negro */
+}
+
+
+.collapse-content {
+  display: none;
+  margin-top: 0.5rem;
+}
+
+.collapse-content.open {
+  display: block;
+}
+
+/* Bloques de JSON */
+.response-block {
+  background: #f5f5f5;
+  color: #000;
+  font-family: monospace;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  overflow: auto;     /* scroll en ambas direcciones */
+  max-height: 400px;  /* altura máxima visible, se puede ajustar */
+  white-space: pre;   /* conserva formato JSON */
+  border: 1px solid #ccc;
+}
+
+/* Lista de parámetros */
+.param-list li {
+  list-style: none;
+  margin-bottom: 0.3rem;
+}
+
+/* Descripción */
+.endpoint-desc {
+  margin: 0.5rem 0;
+}
+
   
-  .collapse-header {
-    padding: 1rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--color-bg-alt);
-  }
-  
-  .collapse-header.expanded {
-    background: var(--color-primary);
-    color: #fff;
-  }
-  
-  .collapse-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding: 0 1rem;
-  }
-  
-  .collapse-content.open {
-    max-height: 500px; /* o auto si quieres animación instantánea */
-    padding: 1rem;
-  }
-  
-  .param-list li {
-    list-style: none;
-    margin-bottom: 0.3rem;
-  }
 
   /* TABS */
 
