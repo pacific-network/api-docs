@@ -135,16 +135,201 @@ const endpoints = [
       "status": "Enviado"
     }
   },
+  // reporte 1
   {
-    "title": "Reporte Diario",
-    "method": "GET",
-    "path": "/api/report/daily",
+    "title": "Reporte Mes Actual",
+    "method": "POST",
+    "path": "{{BASE_URL}}/v2/reports/general_report",
     "category": "Reporte",
-    "descripcion": "Entrega el reporte consolidado de mensajes enviados en una fecha específica.",
+    "descripcion": "Entrega informacion general del mes actual.",
     "params": [
-      { "name": "date", "type": "string" }
-    ]
+    ],
+    "responseExample": {
+      "id": 2,
+      "empresa_id": 1,
+      "campana_id": null,
+      "usuario_id": null,
+      "data": {
+        "mes_actual": "septiembre de 2025",
+        "cantidad_campanas": 3,
+        "total_cargados": 3,
+        "total_entregados": 1570,
+        "total_fallidos": 9,
+        "total_errores": 0
+      },
+      "created_at": "2025-09-24T11:59:41.805Z",
+      "updated_at": "2025-09-24T11:59:41.805Z"
+    }
+  },
+  // reporte 2
+  {
+    "title": "Reporte Campaña Específica (Id)",
+    "method": "POST",
+    "path": "{{BASE_URL}}/v2/reports/campaign_report",
+    "category": "Reporte",
+    "descripcion": "Entrega informacion por una campaña específica, usando su código.",
+    "params": [
+      { "name": "cod_campaign", "type": "string" },
+    ],
+    "requestExample":{
+      "cod_campaign": "CAM-905RPRL"
+    },
+    "responseExample": {
+      "campanaId": 33,
+      "cod_campaign": "CAM-905RPRL",
+      "total": 0,
+      "resumen": {
+        "totalEnviados": 0,
+        "totalEntregados": 0,
+        "totalFallidos": 0,
+        "totalErrores": 0
+      },
+      "detalles": []
+    }
+  },
+  //reporte 3
+  {
+    "title": "Reporte Financiero Mes Actual",
+    "method": "POST",
+    "path": "{{BASE_URL}}/v2/reports/financial_report",
+    "category": "Reporte",
+    "descripcion": "Entrega informacion monetaria del mes actual.",
+    "params": [
+    ],
+    "responseExample": {
+      "mes_actual": "septiembre de 2025",
+      "periodo": "2025-09-01 a 2025-09-24",
+      "resumen": [
+        {
+          "servicio": "ani809",
+          "descripcion": "Número con ANI 809",
+          "precio_unitario": 0,
+          "total_mensajes": 1,
+          "costo_total": 0
+        },
+        {
+          "servicio": "short_number",
+          "descripcion": "Número corto para SMS",
+          "precio_unitario": 0,
+          "total_mensajes": 0,
+          "costo_total": 0
+        },
+        {
+          "servicio": "long_number",
+          "descripcion": "Número largo para SMS",
+          "precio_unitario": 0,
+          "total_mensajes": 0,
+          "costo_total": 0
+        },
+        {
+          "servicio": "ani600",
+          "descripcion": "Número con ANI 600",
+          "precio_unitario": 0,
+          "total_mensajes": 0,
+          "costo_total": 0
+        },
+        {
+          "servicio": "reply",
+          "descripcion": "SMS con respuesta",
+          "precio_unitario": 0,
+          "total_mensajes": 0,
+          "costo_total": 0
+        },
+        {
+          "servicio": "otp",
+          "descripcion": "Código de un solo uso (OTP) para validación",
+          "precio_unitario": 8,
+          "total_mensajes": 0,
+          "costo_total": 0
+        }
+      ],
+      "total_mensajes": 1,
+      "total_costo": 0
+    }
+  },
+  //reporte 4
+  {
+    "title": "Reporte Financiero Mes Seleccionado",
+    "method": "POST",
+    "path": "{{BASE_URL}}/v2/reports/financial_report_by_month",
+    "category": "Reporte",
+    "descripcion": "Entrega informacion monetaria de un mes seleccionado.",
+    "params": [
+      { "name": "mes", "type": "number" },
+      { "name": "ano", "type": "number" },
+    ],
+    "responseExample": {
+      "mes_actual": "julio de 2025",
+      "periodo": "2025-07-01 a 2025-08-01",
+      "resumen": [
+        {
+          "servicio": "short_number",
+          "descripcion": "Número corto para SMS",
+          "precio_unitario": 0,
+          "total_mensajes": 0,
+          "costo_total": 0
+        },
+        {
+          "servicio": "long_number",
+          "descripcion": "Número largo para SMS",
+          "precio_unitario": 0,
+          "total_mensajes": 0,
+          "costo_total": 0
+        },
+        {
+          "servicio": "ani600",
+          "descripcion": "Número con ANI 600",
+          "precio_unitario": 0,
+          "total_mensajes": 0,
+          "costo_total": 0
+        },
+        {
+          "servicio": "ani809",
+          "descripcion": "Número con ANI 809",
+          "precio_unitario": 0,
+          "total_mensajes": 0,
+          "costo_total": 0
+        },
+        {
+          "servicio": "reply",
+          "descripcion": "SMS con respuesta",
+          "precio_unitario": 0,
+          "total_mensajes": 0,
+          "costo_total": 0
+        },
+        {
+          "servicio": "otp",
+          "descripcion": "Código de un solo uso (OTP) para validación",
+          "precio_unitario": 8,
+          "total_mensajes": 0,
+          "costo_total": 0
+        }
+      ],
+      "total_mensajes": 0,
+      "total_costo": 0
   }
+  },
+  {
+    "title": "Ver Estado de Mensaje",
+    "method": "POST",
+    "path": "{{BASE_URL}}/v2/reports/message_status",
+    "category": "Reporte",
+    "descripcion": "Permite consultar el estado de un mensaje específico usando su ID.",
+    "params": [
+      { "name": "idSms", "type": "string" },
+    ],
+    "requestExample":{
+      "idSms": "TNT8ZQMU5O"
+  },
+  "responseExample": {
+    "sendTime": "2025-09-30T20:13:10.000Z",
+    "receiveTime": "2025-09-30T20:13:00.000Z",
+    "statusCode": 201,
+    "descripcion": "El mensaje fue entregado al teléfono móvil del destinatario."
+  }
+  }
+  
+  
 ];
 
 function syntaxHighlight(json) {

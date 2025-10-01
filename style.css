@@ -584,9 +584,10 @@
 
   .category-tabs {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 10px;
+    margin-bottom: 20px;
   }
+  
   
   .cat-tab {
     flex: 1;
@@ -614,3 +615,135 @@
     box-shadow: 0 6px 20px rgba(0,0,0,0.5);
   }
   
+
+  /* -----------------------------
+   GENERAL: NAV Y HEADER
+----------------------------- */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Botón tema */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Tabs */
+.tabs-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* -----------------------------
+   MEDIA QUERY: TABLET (768px)
+----------------------------- */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    display: none; /* oculto por defecto en tablet/móvil */
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .tab-btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001;
+    background: transparent; /* fondo transparente */
+    border: none;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: white; /* líneas blancas */
+    transition: all 0.3s ease;
+  }
+}
+
+/* -----------------------------
+   MEDIA QUERY: MOBILE (480px)
+----------------------------- */
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 1rem;
+  }
+
+  .nav-brand {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .nav-links {
+    gap: 0.25rem;
+  }
+
+  .tab-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .category-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+  }
+}
