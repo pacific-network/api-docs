@@ -1,3 +1,58 @@
+const tabButton = document.querySelector('[data-tab="services"]');
+tabButton.addEventListener("click", () => {
+  const tableBodyTab = document.getElementById("servicesTableTab").getElementsByTagName("tbody")[0];
+  const tabTitle = document.getElementById("servicesTabTitle");
+  let currentPageTab = 0;
+  let filteredRowsTab = [];
+
+  function generateRowsTab(serviceIndex) {
+    const service = services[serviceIndex];
+    filteredRowsTab = service.prices.map(price => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${service.serviceId}</td>
+        <td>${service.name}</td>
+        <td>${price.minVolume.toLocaleString()} - ${price.maxVolume.toLocaleString()}</td>
+        <td>$${price.unitPrice}</td>
+      `;
+      return tr;
+    });
+    tabTitle.textContent = `📊 Servicio: ${service.name}`;
+  }
+
+  function showPageTab() {
+    tableBodyTab.innerHTML = "";
+    filteredRowsTab.forEach(row => tableBodyTab.appendChild(row));
+
+    document.getElementById("pageInfoTab").textContent = `Servicio ${currentPageTab + 1} de ${services.length}`;
+    document.getElementById("prevPageTab").disabled = (currentPageTab === 0);
+    document.getElementById("nextPageTab").disabled = (currentPageTab === services.length - 1);
+  }
+
+  // Paginación
+  document.getElementById("prevPageTab").addEventListener("click", () => {
+    if(currentPageTab > 0) {
+      currentPageTab--;
+      generateRowsTab(currentPageTab);
+      showPageTab();
+    }
+  });
+
+  document.getElementById("nextPageTab").addEventListener("click", () => {
+    if(currentPageTab < services.length - 1) {
+      currentPageTab++;
+      generateRowsTab(currentPageTab);
+      showPageTab();
+    }
+  });
+
+  // Inicializar
+  generateRowsTab(currentPageTab);
+  showPageTab();
+});
+
+
+
 // --- Modal ---
 const modal = document.getElementById("servicesModal");
 const openBtn = document.querySelector(".btn-primary");
@@ -165,3 +220,6 @@ document.getElementById("serviceSelector").addEventListener("change", (e) => {
 // Inicialización (opcional si quieres que también cargue al abrir la página)
 generateRows(currentPage);
 showPage();
+
+
+//tabs

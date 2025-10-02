@@ -928,3 +928,68 @@
   from {transform: translateY(40px); opacity: 0;}
   to {transform: translateY(0); opacity: 1;}
 }
+
+
+/* ------------------------------
+   TABS SERVICES
+------------------------------ */
+/* --- Estilo para la tabla en el tab --- */
+#servicesTableTab {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+#servicesTableTab th, #servicesTableTab td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#servicesTableTab th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+#servicesTableTab tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#servicesTableTab tr:hover {
+  background-color: #cce5ff;
+}
+
+/* Paginación */
+.tab-pagination {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab-pagination button {
+  padding: 5px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tab-pagination button:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+.tab-pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Título del tab */
+#servicesTabTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
