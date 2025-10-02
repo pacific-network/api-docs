@@ -53,7 +53,7 @@
         Envia mensajes sms de forma rapida y segura
       </p>
       <div class="hero-buttons">
-        <button class="btn-primary">Comenzar Ahora</button>
+        <button class="btn-primary">Ver Servicios y Tarifas</button>
         <a href="https://documenter.getpostman.com/view/29143966/2sB3QCRYaH#35befde5-c8e5-4356-910e-283648d6cbab"
           target="_blank" rel="noopener noreferrer">
           <button class="btn-secondary">Ver Documentación</button>
@@ -340,6 +340,38 @@
       </div>
 
     </div>
+
+    <div id="servicesModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>📊 Servicios y Tarifas</h2>
+
+        <div class="table-container">
+          <table id="servicesTable">
+            <thead>
+              <tr>
+                <th>Servicio</th>
+                <th>Descripción</th>
+                <th>Tramo</th>
+                <th>Precio SMS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- filas dinámicas -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <button id="prevPage">⬅️ Anterior</button>
+          <span id="pageInfo"></span>
+          <button id="nextPage">➡️ Siguiente</button>
+        </div>
+      </div>
+    </div>
+
+
+
   </section>
 
   <!-- Footer -->
@@ -376,6 +408,7 @@
   <script src="script.js"></script>
   <script src="endpoint.js"></script>
   <script src="nav.js"></script>
+  <script src="prices.map.js"></script>
 </body>
 
 </html>

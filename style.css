@@ -747,3 +747,184 @@
     padding-bottom: 10px;
   }
 }
+
+
+/* ------------------------------
+   MODAL ESTILOS
+------------------------------ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: #ffffff;
+  margin: auto;
+  padding: 30px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 900px;
+  animation: fadeIn 0.4s ease-in-out, slideUp 0.4s ease;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2a2a2a;
+}
+
+.close-btn {
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #e63946;
+}
+
+/* ------------------------------
+   TABLA ESTILOS
+------------------------------ */
+
+/* ------------------------------
+   MODAL CONTENT
+------------------------------ */
+.modal-content {
+  width: 700px;           /* ancho fijo más pequeño */
+  max-width: 90%;         /* responsive en pantallas pequeñas */
+  height: 500px;          /* altura fija del modal */
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  overflow: hidden;       /* evita que el contenido se salga */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  animation: slideUp 0.3s ease;
+}
+
+/* ------------------------------
+   CONTENEDOR DE TABLA CON SCROLL
+------------------------------ */
+.table-container {
+  flex: 1;                /* ocupa todo el espacio disponible del modal */
+  overflow-y: auto;       /* scroll vertical si la tabla es más grande */
+}
+
+/* Ajustes opcionales para que la tabla ocupe 100% del contenedor */
+.table-container table {
+  width: 100%;
+}
+#servicesTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin: 20px 0;
+}
+
+#servicesTable thead th {
+  background: linear-gradient(135deg, #2196f3, #4cafef);
+  color: white;
+  font-weight: 600;
+  padding: 14px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+#servicesTable tbody tr {
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#servicesTable tbody tr:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+#servicesTable td {
+  padding: 14px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #333;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Primera celda de cada fila */
+#servicesTable td:first-child {
+  font-weight: 600;
+  color: #2196f3;
+}
+
+/* ------------------------------
+   PAGINACIÓN
+------------------------------ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #2196f3, #4cafef);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.pagination button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  transform: translateY(-2px);
+}
+
+.pagination button:disabled {
+  background: #ddd;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+#pageInfo {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #444;
+}
+
+/* ------------------------------
+   ANIMACIONES
+------------------------------ */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(40px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
